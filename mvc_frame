@@ -4,3 +4,9 @@ Controllers  Program.cs  Views                         appsettings.json  bin  ww
 Models       Properties  appsettings.Development.json  bao.csproj        obj
 
 主要資料夾:Model,Controller,View
+
+Controller:
+
+Model:
+
+View:
