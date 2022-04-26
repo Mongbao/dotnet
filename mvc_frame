@@ -6,7 +6,16 @@ Models       Properties  appsettings.Development.json  bao.csproj        obj
 主要資料夾:Model,Controller,View
 
 Controller:
+    每個Ａction可以對應
+    public IActionResult Index()
+    {
+        return View();
+    }
+
 
 Model:
 
 View:
+
+
+https://dotblogs.com.tw/dog0416/2016/05/26/235802
