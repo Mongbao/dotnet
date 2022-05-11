@@ -1,0 +1,27 @@
+ViewResult:表示一個檢視結果，根據檢視模板產生應答內容。對應的Controller方法為View
+PartialViewResult:表示一個部分檢視結果，與ViewResult本質一樣，只是部分檢視不支援母版，
+                  對應ASP.NET，ViewResult相當於一個UserControl。對應的Controller方法的PartiaView
+RedirectResult:表示一個連線跳轉，相當於ASP.NET中的Response.Redirect方法，對應的Controller方法為Redirect
+RedirectToRouteResult:同樣表示一個跳轉，MVC會根據指定的路由名稱或路由資訊(RouteValueDictionary)來生成Url地址，
+                      然後呼叫Response.Redirect跳轉。對應的Controller方法為RedirectToAction和RedirecToRoute
+ContentResult:返回簡單的純文字內容，可透過ContentType屬性指定應答文件型別，通過ContentEncoding屬性指定應答文件的字元編碼。
+              可通過Controller類中的Content方法便捷地返回ContentResult物件。如果控制器方法返回非ActionResult物件，
+              MVC將簡單的以返回物件的toString()內容為基礎產生一個ContentResult物件。
+EmptyResult:返回一個空的結果，如果控制器方法返回一個null，MVC將其轉成EmptyResult物件。
+JavaScriptResult:本質上是一個文字內容，只是將Response.ContentType設定成application/x-javascript，此結果應該和MicrosoftMvcAjax.js指令配合使用，
+                 客戶端收到Ajax應答後，將判斷Response.ContentType的值，如果是application/x-javascript，
+                 則直接eval執行返回的應答內容，此結果型別對應的Controller方法為JavaScript
+JsonResult:表示一個Json結果。MVC將Response.ContentType設定為application/json，並通過JavaScriptSerializer類指定物件
+           序列化為Json表示方式。需要注意，預設情況下，MVC不允許GET請求返回Json結果，要解除此限制，在生成JsonResult物件時，
+           將其JsonRequestBehavior屬性設定為JsonRequestBehavior.AllowGet，此對應Controller方法的Json
+FileResult(FilePathResult,FileContentResult,FileStreamResult)
+  這三個類繼承於FileResult，表示一個檔案內容，三者區別在於，FilePath通過路徑傳送檔案到客戶端，
+  Filecontent通過二進位制資料的方式，而FileStream是通過Stream(流)的方式來傳送。Controller
+  為這三個檔案結果型別提供了一個名為File的過載方式。
+ＨttpUnauthorizedResult:表示一個未經授權訪問的錯誤，MVC會向客戶端傳送一個401的應答狀態。
+                        如果在web.config中開啟了表單驗證(authenication mode="Forms")，則401狀態會將Url轉向指定的loginUrl連結
+HttpStatusCodeResult:返回一個伺服器的錯誤資訊。
+HttpNoFoundResult:返回一個找不到Action錯誤資訊。
+
+
+https://www.796t.com/content/1543376764.html
